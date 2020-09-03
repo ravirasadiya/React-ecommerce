@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './signin.style.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { signInWithGoogle } from '../../firebase/firebase.util';
 
 class SignIn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
-      passoword: '',
+      email: 'tets@test.com',
+      passoword: '12345',
     };
   }
 
@@ -52,6 +53,10 @@ class SignIn extends Component {
           />
           <CustomButton type='submit'>Sign In</CustomButton>
         </form>
+        <CustomButton onClick={signInWithGoogle}>
+          {' '}
+          Sign In with Google{' '}
+        </CustomButton>
       </div>
     );
   }
