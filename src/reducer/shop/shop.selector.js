@@ -6,3 +6,9 @@ export const selectShopData = createSelector(
   [selectShop],
   (selectShop) => selectShop.shopData
 );
+
+export const selectCollection = (collectionURLParams) =>
+  createSelector(
+    [selectShopData],
+    (selectShop) => selectShop[collectionURLParams]
+  );
